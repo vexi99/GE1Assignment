@@ -6,7 +6,7 @@ For my Games Engines 1 project, I plan on creating a beautiful, procedurally gen
 
 ### Requirements
 - Various biomes on the planet
-- Accurately structured terrain generation.
+- Accurately structured terrain generation
 - User input characteristics affects planets generation
 
 ### Tools Used
