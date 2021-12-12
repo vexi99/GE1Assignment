@@ -251,7 +251,7 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -267,7 +267,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 64.96222
+  field of view: 52.6
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -292,13 +292,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 125, y: 108.38, z: 128}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.2398311, y: -0, z: -0, w: 0.97081465}
+  m_LocalPosition: {x: 125, y: 38.2, z: 0}
+  m_LocalScale: {x: 45.24858, y: 1.05, z: 2.247735}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 27.753, y: 0, z: 0}
 --- !u!1 &1530263415
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +334,8 @@ MonoBehaviour:
   depth: 20
   width: 256
   height: 256
-  scale: 19.15
+  tree: {fileID: 2646999033350579836, guid: e2a372b0a93a47849a75ce94e84a51a7, type: 3}
+  scale: 20
   offsetX: 100
   offsetY: 100
 --- !u!154 &1530263417
@@ -498,7 +499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838283694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 125, y: 10, z: 126}
+  m_LocalPosition: {x: 125, y: 8, z: 126}
   m_LocalScale: {x: 25, y: 1, z: 25}
   m_Children: []
   m_Father: {fileID: 0}

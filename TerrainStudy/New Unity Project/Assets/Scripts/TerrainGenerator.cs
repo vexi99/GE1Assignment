@@ -7,6 +7,10 @@ public class TerrainGenerator : MonoBehaviour
     public int depth = 20;
     public int width = 256;
     public int height = 256;
+
+    //Tree prefab made
+    public GameObject tree; 
+
     //An array of 256x256 which holds each height at each point on terrain
     public float[,] heights = new float[256, 256];
 
@@ -17,8 +21,8 @@ public class TerrainGenerator : MonoBehaviour
     void Start()
     {
         //X and Y values given random float value between 0 and 9999
-        offsetX = Random.Range(0f, 9999f);
-        offsetY = Random.Range(0f, 9999f);
+        offsetX = Random.Range(0f, 99999f);
+        offsetY = Random.Range(0f, 99999f);
     }
 
     // Update is called once per frame
@@ -26,7 +30,11 @@ public class TerrainGenerator : MonoBehaviour
     {
         Terrain terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData);
-
+        /*
+        for (int i = 0; i < 10; i++)
+        {
+            Instantiate(tree, new Vector3(130 + i, 15, 130), Quaternion.identity);
+        }*/
         
     }
 
@@ -40,8 +48,7 @@ public class TerrainGenerator : MonoBehaviour
     }
 
     float[,] GenerateHeights()
-    {
-        //float[,] heights = new float[width, height];   
+    {  
         for (int x = 0; x < width; x++)
         {
             for(int y = 0; y < height; y++)
