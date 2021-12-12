@@ -7,6 +7,8 @@ public class TerrainGenerator : MonoBehaviour
     public int depth = 20;
     public int width = 256;
     public int height = 256;
+    //An array of 256x256 which holds each height at each point on terrain
+    public float[,] heights = new float[256, 256];
 
     public float scale = 20f;
     public float offsetX = 100f;
@@ -23,9 +25,9 @@ public class TerrainGenerator : MonoBehaviour
     void Update()
     {
         Terrain terrain = GetComponent<Terrain>();
-        terrain.terrainData = GenerateTerrain(terrain.terrainData); 
-        //offsetX = offsetX + 0.01f;   
-        //offsetY = offsetY + 0.01f;
+        terrain.terrainData = GenerateTerrain(terrain.terrainData);
+
+        
     }
 
     TerrainData GenerateTerrain(TerrainData terrainData)
@@ -39,7 +41,7 @@ public class TerrainGenerator : MonoBehaviour
 
     float[,] GenerateHeights()
     {
-        float[,] heights = new float[width, height];
+        //float[,] heights = new float[width, height];   
         for (int x = 0; x < width; x++)
         {
             for(int y = 0; y < height; y++)
@@ -57,4 +59,6 @@ public class TerrainGenerator : MonoBehaviour
 
         return Mathf.PerlinNoise(xCord, yCord);
     }
+
+
 }
