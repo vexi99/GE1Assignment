@@ -60,6 +60,10 @@ public class TerrainGenerator : MonoBehaviour
         return Mathf.PerlinNoise(xCord, yCord);
     }
 
+    public float getHeights(int x, int z)
+    {
+        return heights[x,z];
+    }
     
 
 }
