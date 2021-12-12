@@ -24,7 +24,8 @@ public class TerrainGenerator : MonoBehaviour
     {
         Terrain terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData); 
-        offsetX = offsetX + 0.01f;   
+        //offsetX = offsetX + 0.01f;   
+        //offsetY = offsetY + 0.01f;
     }
 
     TerrainData GenerateTerrain(TerrainData terrainData)
@@ -52,7 +53,7 @@ public class TerrainGenerator : MonoBehaviour
     float CalculateHeight(int x, int y)
     {
         float xCord = (float)x / width *scale + offsetX;
-        float yCord = (float)y / height*scale + offsetY;
+        float yCord = (float)y / height * scale + offsetY;
 
         return Mathf.PerlinNoise(xCord, yCord);
     }
