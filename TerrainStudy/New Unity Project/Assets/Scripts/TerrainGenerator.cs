@@ -6,10 +6,7 @@ public class TerrainGenerator : MonoBehaviour
 {
     public int depth = 20;
     public int width = 256;
-    public int height = 256;
-
-    //Tree prefab made
-    public GameObject tree; 
+    public int height = 256; 
 
     //An array of 256x256 which holds each height at each point on terrain
     public float[,] heights = new float[256, 256];
@@ -31,11 +28,6 @@ public class TerrainGenerator : MonoBehaviour
         Terrain terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData);
         
-        /*
-        for (int i = 0; i < 10; i++)
-        {
-            Instantiate(tree, new Vector3(130 + i, 15, 130), Quaternion.identity);
-        }*/
         
     }
 

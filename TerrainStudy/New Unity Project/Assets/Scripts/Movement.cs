@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public TerrainGenerator terrain;
+    public TreeGeneration tree;
 
     // Start is called before the first frame update
     void Start()
