@@ -14,6 +14,7 @@ public class TerrainGenerator : MonoBehaviour
 
     void Start()
     {
+        //X and Y values given random float value between 0 and 9999
         offsetX = Random.Range(0f, 9999f);
         offsetY = Random.Range(0f, 9999f);
     }
@@ -50,8 +51,8 @@ public class TerrainGenerator : MonoBehaviour
 
     float CalculateHeight(int x, int y)
     {
-        float xCord = (float)x / width *scale+offsetX;
-        float yCord = (float)y/height*scale+offsetY;
+        float xCord = (float)x / width *scale + offsetX;
+        float yCord = (float)y / height*scale + offsetY;
 
         return Mathf.PerlinNoise(xCord, yCord);
     }
