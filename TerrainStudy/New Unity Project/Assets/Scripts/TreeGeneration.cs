@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeGeneration : TerrainGenerator
+public class TreeGeneration : MonoBehaviour
 {
 
     public GameObject tree, newTree;
@@ -29,7 +29,7 @@ public class TreeGeneration : TerrainGenerator
         {
             treeX[i] = Random.Range(0f,256f);
             treeZ[i] = Random.Range(0f,256f);
-            newTree = Instantiate(tree, new Vector3(treeX[i] , 0, treeZ[i]), Quaternion.identity);
+            newTree = Instantiate(tree, new Vector3(treeX[i] , 30, treeZ[i]), Quaternion.identity);
             treeArray[i] = newTree;
         }
     }
@@ -46,15 +46,13 @@ public class TreeGeneration : TerrainGenerator
         //TreeHeight();
     }
 
-    void TreeHeight()
+    public void TreeHeight(TerrainData terrainData)
     {
-        
-        //terrain.getHeights((int)treeX[i], (int)treeZ[i])
-        for (int i = 0; i < numTrees; i++)
+        for(int i =0;i<numTrees; i++)
         {
-            Vector3 yChange = new Vector3(treeArray[i].transform.position.x,terrain.getHeights((int)treeX[i], (int)treeZ[i]),treeArray[i].transform.position.z);
-            treeArray[i].transform.position = yChange;
+            Debug.Log(terrainData.GetHeight((int)treeX[i],(int)treeZ[i]));
         }
+           
     }
 
     void TreeMovement()
@@ -63,7 +61,7 @@ public class TreeGeneration : TerrainGenerator
         //Workaround here is to multiply speed by amount of elements in array.
         Vector3 xChange = new Vector3(0.2f,0,0);
         Vector3 zChange = new Vector3(0,0,0.2f);
-        
+
         for (int i = 0; i < numTrees; i++)
         {
             if (Input.GetKey(KeyCode.W))

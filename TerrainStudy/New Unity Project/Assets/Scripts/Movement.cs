@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.D))
         {
-            Debug.Log("User moving right");
+            //Debug.Log("User moving right");
             terrain.offsetY = terrain.offsetY + 0.02f;
         }
     }

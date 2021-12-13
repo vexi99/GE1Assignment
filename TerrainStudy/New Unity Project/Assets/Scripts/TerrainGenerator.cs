@@ -8,12 +8,16 @@ public class TerrainGenerator : MonoBehaviour
     public int width = 256;
     public int height = 256; 
 
+    public TreeGeneration Passtree;
+
     //An array of 256x256 which holds each height at each point on terrain
     public float[,] heights = new float[256, 256];
 
     public float scale = 20f;
     public float offsetX = 100f;
     public float offsetY = 100f;
+
+    //public TreeGeneration tree;
 
     void Start()
     {
@@ -27,6 +31,8 @@ public class TerrainGenerator : MonoBehaviour
     {
         Terrain terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData);
+
+        Passtree.TreeHeight(terrain.terrainData);
     }
 
     TerrainData GenerateTerrain(TerrainData terrainData)
