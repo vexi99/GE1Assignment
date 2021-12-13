@@ -44,11 +44,12 @@ public class CloudGeneration : MonoBehaviour
 
             //Generate random int for scale of cloud
             int randXSize = Random.Range(5,20);
+            float randYSize = Random.Range(0.3f, 1f);
             int randZSize = Random.Range(5,20);
 
             //Instantiate cloud into cloudArr with random X and Z Coords at a set height of 20
             cloudArr[i] = Instantiate(cloud, new Vector3(xCoord[i] , yCoord[i], zCoord[i]), Quaternion.identity);
-            cloudArr[i].transform.localScale = new Vector3(randXSize,0.5f, randZSize);
+            cloudArr[i].transform.localScale = new Vector3(randXSize,randYSize, randZSize);
 
             SetCloudColour(i);
         }
