@@ -79,7 +79,6 @@ public class TreeGeneration : MonoBehaviour
             if (Input.GetKey(KeyCode.D))
             {
                 treeArray[i].transform.position -= xChange;
-                
             }
         }
         
