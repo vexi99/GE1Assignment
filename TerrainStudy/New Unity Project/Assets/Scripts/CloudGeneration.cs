@@ -74,7 +74,7 @@ public class CloudGeneration : MonoBehaviour
             cloudArr[i].GetComponent<MeshRenderer>().material.SetColor("_Color",Color.grey);
         }
     }
-    
+
 
     void CloudMovement()
     {
@@ -85,7 +85,6 @@ public class CloudGeneration : MonoBehaviour
         {
             //keep clouds auto moving
             cloudArr[i].transform.position -= new Vector3(0,0,0.05f);
-
 
             //cloud WASD KeyMovement control code
             if (Input.GetKey(KeyCode.W))

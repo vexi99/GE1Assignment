@@ -27,8 +27,6 @@ public class TerrainGenerator : MonoBehaviour
     {
         Terrain terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData);
-        
-        
     }
 
     TerrainData GenerateTerrain(TerrainData terrainData)
