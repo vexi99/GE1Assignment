@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        terrain.offsetX = terrain.offsetX + 0.02f;
+        terrain.offsetX = terrain.offsetX + 0.011f;
 
         if (Input.GetKey(KeyCode.W))
         {

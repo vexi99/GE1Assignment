@@ -9,6 +9,7 @@ public class TerrainGenerator : MonoBehaviour
     public int height = 256; 
 
     public TreeGeneration Passtree;
+    public bool hasStarted = true;
 
     //An array of 256x256 which holds each height at each point on terrain
     public float[,] heights = new float[256, 256];
@@ -32,7 +33,13 @@ public class TerrainGenerator : MonoBehaviour
         Terrain terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData);
 
-        Passtree.TreeHeight(terrain.terrainData);
+        if(hasStarted)
+        {
+            //Control code to ensure only runs once, cannot be put in Start() as terrainData is not available on start method.
+            Passtree.TreeHeight(terrain.terrainData);
+            hasStarted = false;
+        }
+        
     }
 
     TerrainData GenerateTerrain(TerrainData terrainData)

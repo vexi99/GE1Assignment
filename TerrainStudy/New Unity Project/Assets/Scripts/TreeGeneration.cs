@@ -42,15 +42,16 @@ public class TreeGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TreeMovement();  
-        //TreeHeight();
+        TreeMovement();
     }
 
     public void TreeHeight(TerrainData terrainData)
     {
         for(int i =0;i<numTrees; i++)
         {
-            Debug.Log(terrainData.GetHeight((int)treeX[i],(int)treeZ[i]));
+            Vector3 newTreePos = new Vector3(treeArray[i].transform.position.x, terrainData.GetHeight((int)treeX[i],(int)treeZ[i]), treeArray[i].transform.position.z);
+            treeArray[i].transform.position = newTreePos;
+            //Debug.Log(terrainData.GetHeight((int)treeX[i],(int)treeZ[i]));
         }
            
     }
@@ -59,11 +60,12 @@ public class TreeGeneration : MonoBehaviour
     {
         //Movement here is 0.2 instead of usual 0.02 as array is split into 10 pieces.
         //Workaround here is to multiply speed by amount of elements in array.
-        Vector3 xChange = new Vector3(0.2f,0,0);
-        Vector3 zChange = new Vector3(0,0,0.2f);
+        Vector3 xChange = new Vector3(0.18f,0,0);
+        Vector3 zChange = new Vector3(0,0,0.18f);
 
         for (int i = 0; i < numTrees; i++)
         {
+            treeArray[i].transform.position -= zChange;
             if (Input.GetKey(KeyCode.W))
             {
                 treeArray[i].transform.position -= zChange;
