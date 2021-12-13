@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 1530263416}
   - component: {fileID: 1530263420}
   - component: {fileID: 1530263421}
+  - component: {fileID: 1530263422}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -335,6 +336,8 @@ MonoBehaviour:
   depth: 20
   width: 256
   height: 256
+  Passtree: {fileID: 1530263421}
+  hasStarted: 1
   scale: 20
   offsetX: 100
   offsetY: 100
@@ -422,19 +425,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49df0f68965b3944bbb1f94cc0d5e2c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depth: 20
-  width: 256
-  height: 256
-  scale: 20
-  offsetX: 100
-  offsetY: 100
   tree: {fileID: 2646999033350579836, guid: e2a372b0a93a47849a75ce94e84a51a7, type: 3}
   newTree: {fileID: 2646999033350579836, guid: e2a372b0a93a47849a75ce94e84a51a7, type: 3}
   treeArray: []
   terrain: {fileID: 1530263416}
   numTrees: 10
-  treeX: 0
-  treeZ: 0
+  treeX: []
+  treeZ: []
+--- !u!114 &1530263422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530263415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea4aa673dada4c4c8f19a15bc48cef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloud: {fileID: 4614664908630751600, guid: df1b6a5d43d2d454f885fa204edc4644, type: 3}
+  cloudArr: []
+  numClouds: 0
+  xCoord: []
+  yCoord: []
+  zCoord: []
 --- !u!1 &1838283694
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,7 +463,7 @@ GameObject:
   - component: {fileID: 1838283696}
   - component: {fileID: 1838283695}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
