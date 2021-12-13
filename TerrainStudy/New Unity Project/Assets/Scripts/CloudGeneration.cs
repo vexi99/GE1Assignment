@@ -9,6 +9,7 @@ public class CloudGeneration : MonoBehaviour
 
     public int numClouds;
     public float[] xCoord;
+    public float[] yCoord;
     public float[] zCoord;
 
     // Start is called before the first frame update
@@ -29,18 +30,20 @@ public class CloudGeneration : MonoBehaviour
     {
         cloudArr = new GameObject[numClouds];
         xCoord = new float[numClouds];
+        yCoord = new float[numClouds];
         zCoord = new float[numClouds];
         for(int i = 0; i<numClouds ; i++)
         {
             //Generate random x and z coords for cloud
             xCoord[i] = Random.Range(0f,256f);
+            yCoord[i] = Random.Range(15f,25f);
             zCoord[i] = Random.Range(0f,256f);
 
             //Generate random int for scale of cloud
             int randSize = Random.Range(5,20);
 
             //Instantiate cloud into cloudArr with random X and Z Coords at a set height of 20
-            cloudArr[i] = Instantiate(cloud, new Vector3(xCoord[i] , 20, zCoord[i]), Quaternion.identity);
+            cloudArr[i] = Instantiate(cloud, new Vector3(xCoord[i] , yCoord[i], zCoord[i]), Quaternion.identity);
             cloudArr[i].transform.localScale = new Vector3(randSize,0.5f, randSize);
         }
     }
@@ -52,6 +55,7 @@ public class CloudGeneration : MonoBehaviour
 
         for (int i = 0; i < numClouds; i++)
         {
+            //keep clouds auto moving
             cloudArr[i].transform.position -= new Vector3(0,0,0.05f);
 
             if (Input.GetKey(KeyCode.W))
