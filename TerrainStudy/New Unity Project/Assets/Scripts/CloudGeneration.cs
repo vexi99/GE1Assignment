@@ -58,6 +58,8 @@ public class CloudGeneration : MonoBehaviour
             //keep clouds auto moving
             cloudArr[i].transform.position -= new Vector3(0,0,0.05f);
 
+
+            //cloud WASD KeyMovement control code
             if (Input.GetKey(KeyCode.W))
             {
                 cloudArr[i].transform.position -= zChange;
