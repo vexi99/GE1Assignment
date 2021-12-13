@@ -63,6 +63,7 @@ public class TreeGeneration : TerrainGenerator
         //Workaround here is to multiply speed by amount of elements in array.
         Vector3 xChange = new Vector3(0.2f,0,0);
         Vector3 zChange = new Vector3(0,0,0.2f);
+        
         for (int i = 0; i < numTrees; i++)
         {
             if (Input.GetKey(KeyCode.W))

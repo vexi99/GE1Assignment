@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        terrain.offsetX = terrain.offsetX + 0.02f;
+
         if (Input.GetKey(KeyCode.W))
         {
             Debug.Log("User moving forward");
