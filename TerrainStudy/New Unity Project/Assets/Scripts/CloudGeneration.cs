@@ -74,6 +74,7 @@ public class CloudGeneration : MonoBehaviour
             cloudArr[i].GetComponent<MeshRenderer>().material.SetColor("_Color",Color.grey);
         }
     }
+    
 
     void CloudMovement()
     {
