@@ -32,6 +32,7 @@ public class CloudGeneration : MonoBehaviour
         xCoord = new float[numClouds];
         yCoord = new float[numClouds];
         zCoord = new float[numClouds];
+
         for(int i = 0; i<numClouds ; i++)
         {
             //Generate random x and z coords for cloud
@@ -39,12 +40,37 @@ public class CloudGeneration : MonoBehaviour
             yCoord[i] = Random.Range(15f,25f);
             zCoord[i] = Random.Range(0f,256f);
 
+            //cloudArr[i].GetComponent<MeshRenderer>().material.SetColor("_Color",Color.red);
+
             //Generate random int for scale of cloud
-            int randSize = Random.Range(5,20);
+            int randXSize = Random.Range(5,20);
+            int randZSize = Random.Range(5,20);
 
             //Instantiate cloud into cloudArr with random X and Z Coords at a set height of 20
             cloudArr[i] = Instantiate(cloud, new Vector3(xCoord[i] , yCoord[i], zCoord[i]), Quaternion.identity);
-            cloudArr[i].transform.localScale = new Vector3(randSize,0.5f, randSize);
+            cloudArr[i].transform.localScale = new Vector3(randXSize,0.5f, randZSize);
+
+            SetCloudColour(i);
+        }
+    }
+
+    void SetCloudColour(int i)
+    {
+
+        /* Array number i sent from GenerateCloud(), random integer between 0 and 4 exclusive chosen */
+        int randColour = Random.Range(0,4);
+
+        if(randColour == 1)
+        {
+            cloudArr[i].GetComponent<MeshRenderer>().material.SetColor("_Color",Color.white);
+        }
+        else if(randColour == 2)
+        {
+            cloudArr[i].GetComponent<MeshRenderer>().material.SetColor("_Color",Color.black);
+        }
+        else if (randColour == 3)
+        {
+            cloudArr[i].GetComponent<MeshRenderer>().material.SetColor("_Color",Color.grey);
         }
     }
 
