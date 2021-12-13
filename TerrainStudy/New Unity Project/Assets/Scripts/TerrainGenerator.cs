@@ -62,6 +62,7 @@ public class TerrainGenerator : MonoBehaviour
 
     public float getHeights(int x, int z)
     {
+        
         return heights[x,z];
     }
     

@@ -9,8 +9,8 @@ public class TreeGeneration : TerrainGenerator
     public GameObject[] treeArray;
     public TerrainGenerator terrain;
     public int numTrees = 10; 
-    public float treeX; //clone Trees X coords
-    public float treeZ; //clone Trees Z coords
+    public float[] treeX; //clone Trees X coords
+    public float[] treeZ; //clone Trees Z coords
 
     void Start()
     {
@@ -21,20 +21,17 @@ public class TreeGeneration : TerrainGenerator
     {
 
         treeArray = new GameObject[numTrees];
+        treeX = new float[numTrees];
+        treeZ = new float[numTrees];
         /*  For loop for each number of numTrees.
             Two random X and Z coords */
         for(int i = 0; i<numTrees; i++)
         {
-            treeX = Random.Range(0f,256f);
-            treeZ = Random.Range(0f,256f);
-            newTree = Instantiate(tree, new Vector3(treeX , terrain.getHeights((int)treeX, (int)treeZ), treeZ), Quaternion.identity);
+            treeX[i] = Random.Range(0f,256f);
+            treeZ[i] = Random.Range(0f,256f);
+            newTree = Instantiate(tree, new Vector3(treeX[i] , 0, treeZ[i]), Quaternion.identity);
             treeArray[i] = newTree;
         }
-    }
-
-    public void Test()
-    {
-        Debug.Log("Test");
     }
 
     public void DestroyTree()
@@ -45,8 +42,19 @@ public class TreeGeneration : TerrainGenerator
     // Update is called once per frame
     void Update()
     {
-        TreeMovement();
+        TreeMovement();  
+        //TreeHeight();
+    }
+
+    void TreeHeight()
+    {
         
+        //terrain.getHeights((int)treeX[i], (int)treeZ[i])
+        for (int i = 0; i < numTrees; i++)
+        {
+            Vector3 yChange = new Vector3(treeArray[i].transform.position.x,terrain.getHeights((int)treeX[i], (int)treeZ[i]),treeArray[i].transform.position.z);
+            treeArray[i].transform.position = yChange;
+        }
     }
 
     void TreeMovement()
