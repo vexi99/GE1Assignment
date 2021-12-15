@@ -18,11 +18,9 @@ public class TerrainGenerator : MonoBehaviour
     public float offsetX = 100f;
     public float offsetY = 100f;
 
-    //public TreeGeneration tree;
-
     void Start()
     {
-        //X and Y values given random float value between 0 and 99999 on startup
+        //Offset X and Y values given random float value between 0 and 99999 on startup
         offsetX = Random.Range(0f, 99999f);
         offsetY = Random.Range(0f, 99999f);
     }
@@ -44,8 +42,7 @@ public class TerrainGenerator : MonoBehaviour
 
     TerrainData GenerateTerrain(TerrainData terrainData)
     {
-        terrainData.heightmapResolution = width +1;
-
+        terrainData.heightmapResolution = width +1; //mesh resolution
         terrainData.size = new Vector3(width,depth,height);
         terrainData.SetHeights(0,0, GenerateHeights());
         return terrainData;
@@ -68,7 +65,7 @@ public class TerrainGenerator : MonoBehaviour
         float xCord = (float)x / width * scale + offsetX;
         float yCord = (float)y / height * scale + offsetY;
 
-        return Mathf.PerlinNoise(xCord, yCord);
+        return Mathf.PerlinNoise(xCord, yCord); //returns float between 0 and 1
     }
 
     public float getHeights(int x, int z)

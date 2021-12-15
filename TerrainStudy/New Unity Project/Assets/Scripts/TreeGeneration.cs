@@ -51,7 +51,6 @@ public class TreeGeneration : MonoBehaviour
         {
             Vector3 newTreePos = new Vector3(treeArray[i].transform.position.x, terrainData.GetHeight((int)treeX[i],(int)treeZ[i]), treeArray[i].transform.position.z);
             treeArray[i].transform.position = newTreePos;
-            //Debug.Log(terrainData.GetHeight((int)treeX[i],(int)treeZ[i]));
         }
            
     }
