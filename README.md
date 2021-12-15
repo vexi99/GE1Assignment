@@ -13,7 +13,14 @@ My project was originally supposed to be a procedurally generated world, similar
 Users can sit back and relax while watching as you fly through the ever changing terrain. If a user would like to skip ahead they can use WASD controls to accelerate the terrains movement.
 
 # How it works
-[![YouTube]](https://youtu.be/VnNHkofNsgo)
+Link to my [![YouTube]](https://youtu.be/VnNHkofNsgo) video demo.
+
+The terrain is given random Y coordinates using a PerlinNoise function. This is what gives the world its natural looking hills, flatlands and mountains. This is done through the use of a random scale integer which is set on runtime. 
+
+I made my own cloud and tree prefabs for the assignment:
+![image](https://user-images.githubusercontent.com/47209067/146196225-ac536957-18be-4ed6-a1be-85ecdbc696e7.png)
+![image](https://user-images.githubusercontent.com/47209067/146196244-6108fcb7-66e7-4c5e-ab8e-a0d40b76a6a6.png)
+
 
 # List of classes/assets in the project and whether made yourself or modified or if its from a source, please give the reference
 
