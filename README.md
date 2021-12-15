@@ -7,18 +7,22 @@ Student Number: C17448206
 Class Group: TU856/4
 
 # Description of the project
+My project was originally supposed to be a procedurally generated world, similar to google earth. However I ran into issues doing this so i decided to switch to a birds eye view of the world being generated. Terrain, trees and clouds are generated randomly using random and perlin noise functions. The steepness of the worlds peaks are randomised, along with the amount of trees and clouds.
 
 # Instructions for use
+Users can sit back and relax while watching as you fly through the ever changing terrain. If a user would like to skip ahead they can use WASD controls to accelerate the terrains movement.
 
 # How it works
+[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://youtu.be/VnNHkofNsgo)
 
 # List of classes/assets in the project and whether made yourself or modified or if its from a source, please give the reference
 
 | Class/asset | Source |
 |-----------|-----------|
-| MyClass.cs | Self written |
-| MyClass1.cs | Modified from [reference]() |
-| MyClass2.cs | From [reference]() |
+| TerrainGenerator.cs | Self written |
+| TreeGeneration.cs | Self written |
+| Movement.cs | Self written |
+| CloudGeneration.cs | Self written |
 
 # References
 
