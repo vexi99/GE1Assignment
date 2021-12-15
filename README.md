@@ -13,7 +13,7 @@ My project was originally supposed to be a procedurally generated world, similar
 Users can sit back and relax while watching as you fly through the ever changing terrain. If a user would like to skip ahead they can use WASD controls to accelerate the terrains movement.
 
 # How it works
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://youtu.be/VnNHkofNsgo)
+[![YouTube]](https://youtu.be/VnNHkofNsgo)
 
 # List of classes/assets in the project and whether made yourself or modified or if its from a source, please give the reference
 
