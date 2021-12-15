@@ -30,6 +30,35 @@ treeZ[i] = Random.Range(0f,256f);
 newTree = Instantiate(tree, new Vector3(treeX[i] , 30, treeZ[i]), Quaternion.identity);
 ```
 
+The cloud prefab is given a random colour upon creation. This is done by assigning a random number between 1-3 to a variable, and setting the clouds colour to either white, grey or black depending on which random number was given.
+```
+void SetCloudColour(int i)
+    {
+
+        /* Array number i sent from GenerateCloud(), random integer between 0 and 4 exclusive chosen */
+        int randColour = Random.Range(0,4);
+
+        if(randColour == 1)
+        {
+            cloudArr[i].GetComponent<MeshRenderer>().material.SetColor("_Color",Color.white);
+        }
+        else if(randColour == 2)
+        {
+            cloudArr[i].GetComponent<MeshRenderer>().material.SetColor("_Color",Color.black);
+        }
+        else if (randColour == 3)
+        {
+            cloudArr[i].GetComponent<MeshRenderer>().material.SetColor("_Color",Color.grey);
+        }
+    }
+```
+
+The terrain is constantly moving, allowing the user to be able to sit back and enjoy watching the rolling terrain to move. This is done by constantly updating the offsetX variable.
+```
+terrain.offsetX = terrain.offsetX + 0.011f;
+```
+
+Similarly, both clouds and trees are being constantly moved to keep pace with the terrain.
 
 # List of classes/assets in the project and whether made yourself or modified or if its from a source, please give the reference
 
@@ -39,10 +68,12 @@ newTree = Instantiate(tree, new Vector3(treeX[i] , 30, treeZ[i]), Quaternion.ide
 | TreeGeneration.cs | Self written |
 | Movement.cs | Self written |
 | CloudGeneration.cs | Self written |
-
-# References
+| TreePrefab | Self made |
+| CloudPrefab | Self made |
 
 # What I am most proud of in the assignment
+I have struggled with Unity so far this semester. Doing this assignment helped me out massively with my understanding as it forced me to think outside of the box.
+I'm quite proud of both my terrain generation, which gives a randomized terrain each time, and my cloud generation which gives each cloud a random position, size and colour.
 
 # Proposal submitted earlier can go here:
 # GE1Assignment
@@ -63,74 +94,4 @@ For my Games Engines 1 project, I plan on creating a beautiful, procedurally gen
 
 ### Research:
 https://youtu.be/lctXaT9pxA0
-
-## This is how to markdown text:
-
-This is *emphasis*
-
-This is a bulleted list
-
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
-This is code:
-
-```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-So is this without specifying the language:
-
-```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-This is an image using a relative URL:
-
-![An image](images/p8.png)
-
-This is an image using an absolute URL:
-
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
-
-This is a youtube video:
-
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
-
-This is a table:
-
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-
-
 
