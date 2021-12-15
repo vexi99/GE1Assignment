@@ -60,6 +60,14 @@ terrain.offsetX = terrain.offsetX + 0.011f;
 
 Similarly, both clouds and trees are being constantly moved to keep pace with the terrain.
 
+The terrain is moved by adding to the offset variables of the terrain. The actual position of the terrain object never changes, however changing the offset causes the height of the terrain to change. This means that the terrain gives a visual change each time without actually moving the asset.
+```
+if (Input.GetKey(KeyCode.W))
+        {
+            Debug.Log("User moving forward");
+            terrain.offsetX = terrain.offsetX + 0.02f;
+        }
+```
 # List of classes/assets in the project and whether made yourself or modified or if its from a source, please give the reference
 
 | Class/asset | Source |
